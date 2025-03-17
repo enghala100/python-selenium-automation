@@ -4,7 +4,10 @@ Feature: Test Scenarios for target cart
     When click on cart icon
     Then your cart is empty message is shown
 
-  Scenario: User can see sign in page
+
+
+Scenario: User can see the added product at the cart
     Given Open target page
-    When click on sign in button
-    Then verify sign in form opened
+    When search for tea
+    And click on add to cart button
+    Then verify 'added to cart' text is shown
