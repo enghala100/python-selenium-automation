@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
 from time import sleep
 
@@ -10,7 +11,10 @@ CELLS=(By.CSS_SELECTOR,'.cell-item-content')
 @given('Open target circle page')
 def open_circle_page(context):
     context.driver.get('https://www.target.com/circle')
-    sleep(5)
+    context.driver.wait.until(
+        EC.visibility_of_element_located(CELLS),
+        message='cells not found')
+
 
 
 @then('verify User can see at lease {cells_amount} cells in circle page')
