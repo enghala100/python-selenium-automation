@@ -14,3 +14,7 @@ Feature: search for product
     When Search for dress
     Then verify user can see the dress
 
+  Scenario: Verify that user can see product names and images
+    Given Open target page
+    When Search for AirPods (3rd Generation)
+    Then Verify that every product has a name and an image

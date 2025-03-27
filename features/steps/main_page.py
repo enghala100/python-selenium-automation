@@ -14,13 +14,14 @@ SEARCH_BTN=(By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']")
 
 @given('Open target page')
 def open_target_page(context):
-    context.driver.get('https://www.target.com/')
+   # context.driver.get('https://www.target.com/')
+    context.app.main_page.open_main_page()
 
 
 @when('click on cart icon')
 def click_cart_icon(context):
-    context.driver.find_element(*CART_ICON).click()
-
+    #context.driver.find_element(*CART_ICON).click()
+    context.app.header.click_cart_icon()
 
 
 @when('click on sign in button')
@@ -38,7 +39,7 @@ def click_sign_in_button(context):
 def search_for_product(context, product):
     context.driver.wait.until(EC.presence_of_element_located(SEARCH_FIELD),
     message='search field not found')
-    context.driver.find_element(*SEARCH_FIELD).send_keys(product)
-    context.driver.find_element(*SEARCH_BTN).click()
+    context.app.header.search(product)
+
 
 
