@@ -28,10 +28,10 @@ def click_cart_icon(context):
 def click_sign_in_button(context):
     context.driver.wait.until(EC.presence_of_element_located(SIGN_IN_BTN),
     message='sign in button not found')
-    context.driver.find_element(*SIGN_IN_BTN).click()
+    context.app.header.click_sign_in_btn()
     context.driver.wait.until(EC.element_to_be_clickable(SIGN_IN_BTN2),
     message='sign in button2 not found')
-    context.driver.find_element(*SIGN_IN_BTN2).click()
+    context.app.header.click_sign_in_btn2()
 
 
 

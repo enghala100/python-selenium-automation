@@ -3,7 +3,10 @@ from pages.base_page import Page
 
 class CartPage(Page):
     EMPTY_CART_TEXT = (By.CSS_SELECTOR, "[data-test='boxEmptyMsg']")
+
     def cart_text(self):
-        actual_text = self.driver.find_element(*self.EMPTY_CART_TEXT).text
-        expected_text = 'Your cart is empty'
-        assert actual_text == expected_text, f'Error. Text {expected_text} not in {actual_text}'
+        self.verify_text('Your cart is empty', *self.EMPTY_CART_TEXT)
+
+
+    def verify_cart_page_opens(self):
+        self.verify_url(f'{self.base_url}cart')  # 'https://www.target.com/' + 'cart'

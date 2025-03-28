@@ -1,8 +1,10 @@
 Feature: search for product
+
   Scenario: User can search for a tea on Target
     Given Open target page
     When Search for tea
     Then verify user can see the tea
+    And Verify tea in URL
 
   Scenario: User can search for a iPhone on Target
     Given Open target page

@@ -13,3 +13,9 @@ def check_cart_is_empty(context):
     context.app.cart_page.cart_text()
 
 
+@then('Verify cart page opens')
+def verify_cart_page_opens(context):
+    context.app.cart_page.verify_cart_page_opens()
+
+
+

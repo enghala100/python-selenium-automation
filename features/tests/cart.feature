@@ -3,6 +3,7 @@ Feature: Test Scenarios for target cart
     Given Open target page
     When click on cart icon
     Then your cart is empty message is shown
+    And Verify cart page opens
 
 
 

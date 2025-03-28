@@ -19,15 +19,18 @@ PRODUCT_PRICE=(By.CSS_SELECTOR, "[data-test='current-price']")
 def user_see_product(context, expected_text):
     context.app.search_results_page.verify_search_results(expected_text)
 
+@then('Verify {expected_text} in URL')
+def verify_results_url(context, expected_text):
+    context.app.search_results_page.verify_results_url(expected_text)
 
 
 @when('click on add to cart button')
 def click_add_cart_button(context):
     context.driver.wait.until(EC.element_to_be_clickable(ADD_CART_BTN))
     context.driver.execute_script("window.scrollTo(0, 500);")
-    context.driver.find_element(*ADD_CART_BTN).click()
+    context.app.search_results_page.click_add_cart_button()
     context.driver.wait.until(EC.element_to_be_clickable(ADD_CART_BTN2))
-    context.driver.find_element(*ADD_CART_BTN2).click()
+    context.app.search_results_page.click_add_cart_button2()
 
 
 @then("verify 'added to cart' text is shown")
