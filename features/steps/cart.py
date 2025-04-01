@@ -4,7 +4,7 @@ from behave import given, when, then
 from time import sleep
 
 
-EMPTY_CART_TEXT=(By.CSS_SELECTOR,"[data-test='boxEmptyMsg']")
+
 
 
 

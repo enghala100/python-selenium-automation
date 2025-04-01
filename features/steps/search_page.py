@@ -4,7 +4,7 @@ from behave import given, when, then
 from time import sleep
 
 
-SEARCH_RESULT_TEXT=(By.XPATH, "//div[@data-test='lp-resultsCount']")
+
 ADD_CART_BTN=(By.CSS_SELECTOR,'.sc-4df0f72b-2')
 ADD_CART_BTN2=(By.CSS_SELECTOR,"[data-test='content-wrapper'] [data-test='orderPickupButton']")
 ADD_CART_TEXT=(By.XPATH,'//span[@class="h-text-lg"]')
@@ -28,6 +28,7 @@ def verify_results_url(context, expected_text):
 def click_add_cart_button(context):
     context.driver.wait.until(EC.element_to_be_clickable(ADD_CART_BTN))
     context.driver.execute_script("window.scrollTo(0, 500);")
+    sleep(8)
     context.app.search_results_page.click_add_cart_button()
     context.driver.wait.until(EC.element_to_be_clickable(ADD_CART_BTN2))
     context.app.search_results_page.click_add_cart_button2()

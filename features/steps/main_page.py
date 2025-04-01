@@ -3,13 +3,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from behave import given, when, then
 from time import sleep
 
-
-CART_ICON=(By.CSS_SELECTOR, "[data-test='@web/CartLink']")
-SIGN_IN_BTN=(By.CSS_SELECTOR,"[data-test='@web/AccountLink']")
-SIGN_IN_BTN2=(By.XPATH, "//button[@data-test='accountNav-signIn']")
-SEARCH_FIELD=(By.CSS_SELECTOR, "[data-test='@web/Search/SearchInput']")
-SEARCH_BTN=(By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']")
-
+SIGN_IN_BTN = (By.CSS_SELECTOR, "[data-test='@web/AccountLink']")
+SIGN_IN_BTN2 = (By.XPATH, "//button[@data-test='accountNav-signIn']")
 
 
 @given('Open target page')
