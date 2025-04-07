@@ -59,3 +59,12 @@ def verify_products_name_img(context):
         print(title)
         product.find_element(*PRODUCT_IMG)
         product.find_element(*PRODUCT_PRICE)
+
+@when('Hover favorites icon')
+def hover_fav_icon(context):
+    context.app.search_results_page.hover_fav_icon()
+
+
+@then('Favorites tooltip is shown')
+def verify_fav_tooltip(context):
+    context.app.search_results_page.verify_fav_tooltip()

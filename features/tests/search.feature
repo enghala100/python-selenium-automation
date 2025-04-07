@@ -20,3 +20,10 @@ Feature: search for product
     Given Open target page
     When Search for AirPods (3rd Generation)
     Then Verify that every product has a name and an image
+
+
+  Scenario: User can see favorites tooltip for search results
+    Given Open Target page
+    When Search for tea
+    And Hover favorites icon
+    Then Favorites tooltip is shown
